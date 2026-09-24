@@ -51,7 +51,7 @@ Validation: 10,000
 ## 3. 最终模型
 
 最终使用的 CNN：
-
+'''python
 nn.Sequential(
     nn.Conv2d(1, 32, kernel_size=3, padding=1, stride=1),
     nn.ReLU(),
@@ -62,9 +62,9 @@ nn.Sequential(
     nn.Flatten(),
     nn.Linear(3136, 10)
 )
-
+'''
 数据经过网络时的主要尺寸变化：
-
+'''text
 Input
 1 × 28 × 28
 ↓ 
@@ -85,6 +85,7 @@ Flatten
 ↓ 
 Linear
 10
+'''
 其中：
 Conv2d：提取局部图像特征
 ReLU：提供非线性
