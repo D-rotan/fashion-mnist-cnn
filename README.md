@@ -95,18 +95,23 @@ Linear：根据提取出的特征进行最终分类
 ## 4. 训练配置
 
 Optimizer: Adam
+
 Learning rate: 0.001
+
 Weight decay: 0.0001
 
 Scheduler: CosineAnnealingLR
+
 T_max: 50
 
 Batch size: 100
+
 Epochs: 30
 
 Loss function: CrossEntropyLoss
 
 Data augmentation:
+
 RandomHorizontalFlip
 
 训练使用 CUDA（如果可用）。
