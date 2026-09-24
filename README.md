@@ -19,23 +19,27 @@ Fashion-MNIST 是一个包含 10 个服装类别的灰度图像分类数据集�
 使用 PyTorch torchvision.datasets.FashionMNIST。
 
 Training set: 60,000 images
+
 Test set: 10,000 images
+
 Image size: 1×28×28
+
 Number of classes: 10
 
 类别：
 
-Label	Class
-  0	    T-shirt/top
-  1	    Trouser
-  2	    Pullover
-  3	    Dress
-  4	    Coat
-  5	    Sandal
-  6	    Shirt
-  7	    Sneaker
-  8	    Bag
-  9	    Ankle boot
+| Label	 |   Class    |
+|--------|-----------:|
+|  0	   | T-shirt/top|
+|  1	   | Trouser    |
+|  2	   | Pullover   |
+|  3	   | Dress      |
+|  4	   | Coat       |
+|  5	   | Sandal     |
+|  6	   | Shirt      |
+|  7	   | Sneaker    |
+|  8	   | Bag        |
+|  9	   | Ankle boot |
 
 训练过程中将训练集划分为：
 
@@ -52,11 +56,9 @@ nn.Sequential(
     nn.Conv2d(1, 32, kernel_size=3, padding=1, stride=1),
     nn.ReLU(),
     nn.MaxPool2d(kernel_size=2, stride=2),
-
     nn.Conv2d(32, 64, kernel_size=3, padding=1, stride=1),
     nn.ReLU(),
     nn.MaxPool2d(kernel_size=2, stride=2),
-
     nn.Flatten(),
     nn.Linear(3136, 10)
 )
@@ -65,17 +67,23 @@ nn.Sequential(
 
 Input
 1 × 28 × 28
-↓ Conv2d
+↓ 
+Conv2d
 32 × 28 × 28
-↓ MaxPool
+↓ 
+MaxPool
 32 × 14 × 14
-↓ Conv2d
+↓ 
+Conv2d
 64 × 14 × 14
-↓ MaxPool
+↓ 
+MaxPool
 64 × 7 × 7
-↓ Flatten
+↓ 
+Flatten
 3136
-↓ Linear
+↓ 
+Linear
 10
 其中：
 Conv2d：提取局部图像特征
