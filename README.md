@@ -123,7 +123,7 @@ Data augmentation:RandomHorizontalFlip
 5.1 MLP Baseline
 
 首先使用 MLP 作为基线模型：
-
+```text
 Flatten
 ↓
 Linear(784, 128)
@@ -131,7 +131,7 @@ Linear(784, 128)
 ReLU
 ↓
 Linear(128, 10)
-
+```
 MLP 可以完成基本的图像分类，但由于输入图片经过 Flatten 后变成一维向量，原始图像中的空间结构无法直接保留。
 
 此外，实验中发现 T-shirt/top、Pullover、Coat 和 Shirt 等外观相似的类别比较容易发生混淆。
