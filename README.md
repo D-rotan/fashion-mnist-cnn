@@ -44,6 +44,7 @@ Number of classes: 10
 训练过程中将训练集划分为：
 
 Training: 50,000
+
 Validation: 10,000
 
 训练集使用 RandomHorizontalFlip 进行数据增强，验证集和测试集不使用随机数据增强。
@@ -111,9 +112,7 @@ Epochs: 30
 
 Loss function: CrossEntropyLoss
 
-Data augmentation:
-
-RandomHorizontalFlip
+Data augmentation:RandomHorizontalFlip
 
 训练使用 CUDA（如果可用）。
 
@@ -142,11 +141,11 @@ MLP 可以完成基本的图像分类，但由于输入图片经过 Flatten 后�
 5.2 CNN
 
 最初的 CNN 使用较大的步幅进行下采样：
-
+```text
 Conv → ReLU → Pool
 → Conv → ReLU
 → Flatten → Linear
-
+```
 实验发现过早降低空间分辨率可能损失部分图像信息。
 
 因此后续模型减少了卷积层中的下采样，让卷积层在较大的空间分辨率上提取特征，并主要通过 MaxPooling 进行下采样。
