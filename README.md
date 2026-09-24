@@ -141,11 +141,7 @@ MLP 可以完成基本的图像分类，但由于输入图片经过 Flatten 后�
 5.2 CNN
 
 最初的 CNN 使用较大的步幅进行下采样：
-```text
-Conv → ReLU → Pool
-→ Conv → ReLU
-→ Flatten → Linear
-```
+Conv → ReLU → Pool → Conv → ReLU → Flatten → Linear
 实验发现过早降低空间分辨率可能损失部分图像信息。
 
 因此后续模型减少了卷积层中的下采样，让卷积层在较大的空间分辨率上提取特征，并主要通过 MaxPooling 进行下采样。
@@ -193,6 +189,7 @@ True Shirt → Pullover
 ## 6. 最终结果
 
 最终模型在验证集上的最佳结果：
+
 ![Training Loss](results/training_loss.png)
 ![Training Accuracy](results/training_accuracy.png)
 |    Metric	                  | Result |
@@ -202,6 +199,7 @@ True Shirt → Pullover
 | Best Epoch	                |   26   |
 
 测试集结果：
+
 ![Confusion Matrix](results/confusion_matrix.png)
 |    Metric	    | Result  |
 |---------------|--------:|
